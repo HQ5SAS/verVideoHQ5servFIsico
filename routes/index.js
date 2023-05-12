@@ -2,6 +2,10 @@ var express = require('express');
 var router = express.Router();
 module.exports = router;
 
+//-else------------------
+router.get('/', function (req, res, next) {
+  res.send("sevidor en linea")
+})
 
 router.get('/videoServer', function (req, res, next) {
   const ID_user = req.query.id;
