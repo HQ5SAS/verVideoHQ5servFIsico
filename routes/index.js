@@ -9,7 +9,8 @@ router.get('/', function (req, res, next) {
 })
 
 router.get('/videoServer', function (req, res, next) {
-  const ID_user = req.query.id;
+  try{
+    const ID_user = req.query.id;
   const range = req.headers.range;
   if(!range){
     res.status(400).send("err requiere range header")
@@ -31,6 +32,11 @@ router.get('/videoServer', function (req, res, next) {
   res.writeHead(206, headers);
   const videoStream= fs.createReadStream(videoPath,{start, end});
   videoStream.pipe(res)
+  }
+  catch(err){
+    console.log(err)
+  }
+  
 
 })
 //-else------------------
