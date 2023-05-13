@@ -14,7 +14,7 @@ router.get('/videoServer', function (req, res, next) {
   // if(!range){
   //   res.status(400).send("err requiere range header")
   // }
-  const videoPath='../transfdhq5/'+ID_user;
+  const videoPath=`/transfdhq5/`+ID_user;
   const videoSize= fs.statSync(videoPath).size;
 
   const CHUNNK_SIZE= 60 ** 6;//6M 
