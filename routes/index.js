@@ -30,6 +30,7 @@ router.get('/videoServer', function (req, res, next) {
     "Content-Type":"video/mp4"
   };
   res.writeHead(206, headers);
+  console.log(headers)
   const videoStream= fs.createReadStream(videoPath,{start, end});
   videoStream.pipe(res)
   }
