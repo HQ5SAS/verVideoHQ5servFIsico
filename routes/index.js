@@ -9,10 +9,10 @@ router.get('/', function (req, res, next) {
 
 router.get('/videoServer', function (req, res, next) {
   const ID_user = req.query.id;
-  const range = req.headers.range;
-  if(!range){
-    res.status(400).send("err requiere range header")
-  }
+  // const range = req.headers.range;
+  // if(!range){
+  //   res.status(400).send("err requiere range header")
+  // }
   const videoPath='/transfdhq5/'+ID_user;
   const videoSize= fs.statSync(videoPath).size;
 
